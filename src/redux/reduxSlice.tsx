@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 export interface Habit {
   id: string;
   name: string;
@@ -9,15 +9,34 @@ export interface Habit {
 
 interface HabitState {
   habits: Habit[];
-  // isLoading: boolean;
-  // error: string | null;
+  isLoading: boolean;
+  error: string | null;
 }
 const initialState: HabitState = {
   habits: [],
-  // isLoading: false,
-  // error: null
+  isLoading: false,
+  error: null
 }
-// export const fetchData = async()
+export const fetchData = createAsyncThunk("dataslice/fetchData", async () => {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  const mockHabit: Habit[] = [
+    {
+      id: "1",
+      name: "Read",
+      frequency: "weekly",
+      completedDates: [],
+      createdAt: new Date().toISOString().split("T")[0]
+    },
+    {
+      id: "2",
+      name: "Rated",
+      frequency: "daily",
+      completedDates: [],
+      createdAt: new Date().toISOString().split("T")[0]
+    }
+  ];
+  return mockHabit;
+})
 const reduxData = createSlice({
   name: 'dataslice',
   initialState,
@@ -39,7 +58,7 @@ const reduxData = createSlice({
         if (index >= 0) {
           item.completedDates.splice(index, 1)
         }
-        else{
+        else {
           item.completedDates.push(actions.payload.date)
         }
       }
@@ -50,6 +69,19 @@ const reduxData = createSlice({
       })
     }
   },
+  extraReducers:(builder) => {
+    builder.addCase(fetchData.pending, (state) => {
+      state.isLoading = true
+    })
+    .addCase(fetchData.fulfilled, (state,actions) => {
+      state.isLoading = false;
+      state.habits = actions.payload
+    })
+    .addCase(fetchData.rejected, (state,actions) => {
+      state.isLoading = false;
+      state.error = actions.error.message || "Failed to Fetch the Habits"
+    });
+  }
 })
 
 export default reduxData.reducer;

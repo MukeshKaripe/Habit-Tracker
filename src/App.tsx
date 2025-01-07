@@ -5,6 +5,7 @@ import AddHabbit from './ecommerce/components/Addhabbit'
 import store from './store/store'
 import Slecteduse from './ecommerce/components/Selecteduse'
 import { Box } from '@mui/material'
+import Habbitstats from './ecommerce/components/Habbitstats'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
       <AddHabbit />
       <Slecteduse />
       </Box>
+      <Habbitstats></Habbitstats>
     </Provider>
   )
 }
