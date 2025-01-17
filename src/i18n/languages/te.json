@@ -1,0 +1,18 @@
+{
+    "common": {
+      "welcome": "స్వాగతం",
+      "login": "ప్రవేశించండి",
+      "email": "ఇమెయిల్",
+      "password": "పాస్వర్డ్",
+      "signup": "నమోదు",
+      "logout": "లాగ్అవుట్",
+      "language": "భాష"
+    },
+    "login": {
+      "title": "మీ ఖాతాలోకి ప్రవేశించండి",
+      "noAccount": "ఖాతా లేదా?",
+      "createAccount": "ఖాతా సృష్టించండి",
+      "loginButton": "ప్రవేశించండి",
+      "invalidCredentials": "చెల్లని ఇమెయిల్ లేదా పాస్వర్డ్!"
+    }
+  }

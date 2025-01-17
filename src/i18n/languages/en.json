@@ -1,0 +1,19 @@
+{
+    "common": {
+      "welcome": "Welcome",
+      "login": "Login",
+      "email": "Email",
+      "password": "Password",
+      "signup": "Sign Up",
+      "logout": "Logout",
+      "language": "Language"
+    },
+    "login": {
+      "title": "Login to your account",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create Account",
+      "loginButton": "Login",
+      "invalidCredentials": "Invalid email or password!"
+    }
+  }
+  
