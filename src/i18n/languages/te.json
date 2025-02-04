@@ -14,5 +14,8 @@
       "createAccount": "ఖాతా సృష్టించండి",
       "loginButton": "ప్రవేశించండి",
       "invalidCredentials": "చెల్లని ఇమెయిల్ లేదా పాస్వర్డ్!"
-    }
+    },
+    "habbit":{
+      "enterHabit":"నమోదు "
+         }
   }

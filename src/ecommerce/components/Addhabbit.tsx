@@ -23,21 +23,19 @@ const AddHabit = () => {
 
     return (
         <>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' , marginTop: '20px' }}>
                 <Typography variant="h4">{t('common.welcome')}</Typography>
                 <LanguageSelector />
             </Box>
-            
             <form onSubmit={handleSubmit}>
                 <TextField 
                     className="mb-2" 
                     sx={{ marginBottom: "10px" }} 
-                    label={t('common.enterHabit')} 
+                    label={t('habbit.enterHabit')} 
                     fullWidth 
                     value={name} 
                     onChange={(e) => setName(e.target.value)} 
                 />
-                
                 <FormControl fullWidth>
                     <InputLabel>{t('common.frequency')}</InputLabel>
                     <Select
@@ -49,7 +47,6 @@ const AddHabit = () => {
                         <MenuItem value="weekly">{t('common.weekly')}</MenuItem>
                     </Select>
                 </FormControl>
-                
                 <Button 
                     fullWidth 
                     sx={{ marginTop: '10px' }} 

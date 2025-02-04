@@ -14,6 +14,9 @@
       "createAccount": "Create Account",
       "loginButton": "Login",
       "invalidCredentials": "Invalid email or password!"
+    },
+    "habbit":{
+ "enterHabit":"Enter Habbit"
     }
   }
   
