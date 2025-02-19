@@ -27,24 +27,36 @@ const AddHabit = () => {
                 <Typography variant="h4">{t('common.welcome')}</Typography>
                 <LanguageSelector />
             </Box>
+            <Box 
+                sx={{
+                    maxWidth: '500px',
+                    width: '100%',
+                    padding: '20px',
+                    boxShadow: 3,
+                    borderRadius: '8px',
+                    backgroundColor: '#fff',
+                    margin:"auto"
+                }}
+            >
+            <Typography variant="h5">Add Task</Typography>
             <form onSubmit={handleSubmit}>
                 <TextField 
-                    className="mb-2" 
-                    sx={{ marginBottom: "10px" }} 
+                    className="m-4" 
+                    sx={{ marginBottom: "20px", marginTop:"20px" }} 
                     label={t('habbit.enterHabit')} 
                     fullWidth 
                     value={name} 
                     onChange={(e) => setName(e.target.value)} 
                 />
                 <FormControl fullWidth>
-                    <InputLabel>{t('common.frequency')}</InputLabel>
+                    <InputLabel>{t('habbit.frequency')}</InputLabel>
                     <Select
                         value={frequency}
-                        label={t('common.frequency')}
+                        label={t('habbit.frequency')}
                         onChange={(e) => setFrequency(e.target.value as "daily" | "weekly")}
                     >
-                        <MenuItem value="daily">{t('common.daily')}</MenuItem>
-                        <MenuItem value="weekly">{t('common.weekly')}</MenuItem>
+                        <MenuItem value="daily">{t('habbit.enterDaily')}</MenuItem>
+                        <MenuItem value="weekly">{t('habbit.enterWeekly')}</MenuItem>
                     </Select>
                 </FormControl>
                 <Button 
@@ -53,9 +65,10 @@ const AddHabit = () => {
                     variant="contained" 
                     type='submit'
                 >
-                    {t('common.submit')}
+                    {t('submit.submit')}
                 </Button>
             </form>
+            </Box>
         </>
     );
 };

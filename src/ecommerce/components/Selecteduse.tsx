@@ -33,10 +33,10 @@ const Slecteduse = () => {
 
     }
     return (<>
-        <div>
+        <Box sx={{display:"flex",flexWrap:'wrap',gap:'20px'}}>
             {habits.map((val: Habit) => {
                 return (<>
-                    <Box sx={{ margin: '10px 0px', padding: '10px', boxShadow: '0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)' }}>
+                    <Box sx={{ margin: '10px 0px', padding: '10px', boxShadow: '0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)', width:'47%' }}>
                         <Grid container flexDirection={'row'} key={val.id} >
                             <Grid xs={12} md={6}>
                                 {val.name}
@@ -46,7 +46,7 @@ const Slecteduse = () => {
 
                             </Grid>
                             <Grid xs={12} md={6} container flexWrap={'nowrap'} >
-                                <Button variant="contained" sx={{ marginRight: '10px' }} color={val.completedDates.includes(today) ? "success" : "primary"} startIcon={<CheckCircleOutlineOutlined />} onClick={() => dispatch(habbitsToggle({ id: val.id, date: today }))}  >{val.completedDates.includes(today) ? "Completed" : "Mark Complete"}  </Button>
+                                <Button variant="contained" sx={{ marginRight: '10px', whiteSpace:'nowrap' }} color={val.completedDates.includes(today) ? "success" : "primary"} startIcon={<CheckCircleOutlineOutlined />} onClick={() => dispatch(habbitsToggle({ id: val.id, date: today }))}  >{val.completedDates.includes(today) ? "Completed" : "Mark Complete"}  </Button>
                                 <Button variant="outlined" color="error" startIcon={<Delete />} onClick={() => dispatch(deletItem({ id: val.id }))} >Delete</Button>
 
 
@@ -57,7 +57,7 @@ const Slecteduse = () => {
                     </Box>
                 </>)
             })}
-        </div>
+        </Box>
     </>)
 }
 export default Slecteduse; 
